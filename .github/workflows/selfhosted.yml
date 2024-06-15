@@ -423,6 +423,10 @@ jobs:
         # Sync the repositories
         /opt/crave/resync.sh  && \
         
+        # Fucking clang
+        rm -rf prebuilts/clang/host/linux-x86/clang-r450784d; \
+        git clone https://gitlab.com/tejas101k/clang-r450784d.git prebuilts/clang/host/linux-x86/clang-r450784d
+        
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
