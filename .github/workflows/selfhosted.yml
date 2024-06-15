@@ -420,9 +420,6 @@ jobs:
           echo "Git clone failed, downloading through curl instead..."; \
         fi \
         
-        # Sync the repositories
-        /opt/crave/resync.sh  && \
-        
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
