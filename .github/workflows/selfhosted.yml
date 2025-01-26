@@ -597,7 +597,8 @@ jobs:
       continue-on-error: true
 
       # Upload to pixel drain 
-      - name: Upload Using Pixeldrain
+    - name: Upload Using Pixeldrain
       run: |
         cd /crave-devspaces/go-pd
         ./go-pd upload k 49e3ad52-7531-4b7 4-a1e1-541f602f7262 /crave-devspace s/Lineage22/oscaro/EvolutionX-15.0-2 0250126-oscaro-10.2-Unofficial.zip -v
+      continue-on-error: true
