@@ -595,3 +595,8 @@ jobs:
         cd $PROJECTFOLDER
         crave ssh -- "export TG_UPLOAD_LIMIT="${{ secrets.TG_UPLOAD_LIMIT }}"; bash /opt/crave/telegram/upload.sh '${{ github.event.inputs.DEVICE_NAME }}' '${{ secrets.EXTRA_FILES }}'"
       continue-on-error: true
+
+      # Upload to pixel drain 
+      run: |
+        cd /crave-devspaces/go-pd
+        ./go-pd upload k 49e3ad52-7531-4b7 4-a1e1-541f602f7262 /crave-devspace s/Lineage22/oscaro/EvolutionX-15.0-2 0250126-oscaro-10.2-Unofficial.zip -v
